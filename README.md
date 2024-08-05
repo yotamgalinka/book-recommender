@@ -9,10 +9,6 @@ This is a Book Search and Details application built with Angular. The app allows
 - **Load More Results**: Users can load more search results by clicking the "Load More" button.
 - **Error Handling**: Provides user-friendly messages for API request errors and loading states.
 
-## Prerequisites
-- **Node.js** (v14.x or later)
-- **Angular CLI** (v12.x or later)
-
 ## Installation
 1. Clone the repository:
    git clone https://github.com/yotamgalinka/book-recommender.git
