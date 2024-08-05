@@ -32,7 +32,6 @@ export class BookService {
   }
 
   getBookRatings(id: string): Observable<any> {
-    // Assuming there's an endpoint to get ratings/reviews
     return this.http.get(`${this.apiUrl}/works/${id}/ratings.json`).pipe(
       timeout(10000), // 10 seconds timeout
       catchError(error => {
