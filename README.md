@@ -1,27 +1,24 @@
-# SearchBarProject
+# Book Recommendations App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.3.
+## Project Description
+This is a Book Search and Details application built with Angular. The app allows users to search for books using the Open Library API and view detailed information about selected books.
 
-## Development server
+## Features
+- **Search for Books**: Users can search for books by title, author, or keyword.
+- **View Book Details**: Users can view detailed information about a selected book, including title, author(s), publication year, synopsis, genres, and average rating.
+- **Load More Results**: Users can load more search results by clicking the "Load More" button.
+- **Error Handling**: Provides user-friendly messages for API request errors and loading states.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Prerequisites
+- **Node.js** (v14.x or later)
+- **Angular CLI** (v12.x or later)
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Installation
+1. Clone the repository:
+   git clone https://github.com/yotamgalinka/book-recommender.git
+   cd book-recommender
+2. Install the project's dependencies:
+    npm install
+3. Start the development server:
+    ng serve
+4. Navigate to `http://localhost:4200/`
