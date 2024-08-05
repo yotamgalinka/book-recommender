@@ -1,0 +1,29 @@
+<div class="search-container">
+  <div class="logo">Books</div>
+  <input [formControl]="searchControl" placeholder="Search for books..." />
+  <div class="search-popup" *ngIf="isLoadingMore || searchResults.length || error || noBooks">
+    <div *ngIf="noBooks && !error" class="no-books-message">
+      No books match the query.
+      <button (click)="searchBooks()" class="retry-btn">Try Again</button>
+    </div>
+    <div *ngFor="let book of searchResults" (click)="selectBook(book.key.split('/')[2], book.author_name?.join(', '), book.first_publish_year, book.ratings_average)" class="search-result">
+      <img *ngIf="book.cover_i" [src]="'https://covers.openlibrary.org/b/id/' + book.cover_i + '-S.jpg'" alt="{{ book.title }}" />
+      <img *ngIf="!book.cover_i" src="/assets/placeHolderImage.png" alt="{{ book.title }}" />
+      <div class="book-info">
+        <h3>{{ book.title }}</h3>
+        <p>{{ book.author_name?.join(', ') }}</p>
+        <p>{{ book.first_publish_year }}</p>
+      </div>
+    </div>
+    <button *ngIf="!isLastPage && !error" (click)="loadMoreBooks()" [disabled]="isLoadingMore" class="load-more-btn">
+      <span *ngIf="!isLoadingMore">Load More</span>
+      <span *ngIf="isLoadingMore">Loading...</span>
+    </button>
+    <div *ngIf="error" class="error-container">
+      <div class="error-message">
+        {{ error }}
+        <button (click)="tryAgain()" class="retry-btn">Try Again</button>
+      </div>
+    </div>
+  </div>
+</div>

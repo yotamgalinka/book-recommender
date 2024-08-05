@@ -67,7 +67,8 @@
               "buildTarget": "searchBarProject:build:production"
             },
             "development": {
-              "buildTarget": "searchBarProject:build:development"
+              "buildTarget": "searchBarProject:build:development",
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
@@ -97,5 +98,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

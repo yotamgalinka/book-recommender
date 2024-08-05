@@ -1,0 +1,20 @@
+<div class="book-details-container">
+  <div *ngIf="isLoading" class="loading-message">Loading...</div>
+  <div *ngIf="error" class="error-message">{{ error }}</div>
+  <div *ngIf="!isLoading && !error">
+    <div class="book-title">{{ book.title }}</div>
+    <div class="book-author"><strong>Author(s):</strong> {{ authorQueryParam }}</div>
+    <div class="book-image" *ngIf="book.covers?.length">
+      <img [src]="'https://covers.openlibrary.org/b/id/' + book.covers[0] + '-L.jpg'" alt="{{ book.title }}" />
+    </div>
+    <div *ngIf="!book.covers?.length" class="book-image">
+      <div class="placeholder">{{ book.title }}</div>
+    </div>
+    <div class="book-details">
+      <p><strong>Publication Year:</strong> {{ yearQueryParam }}</p>
+      <p><strong>Average Rating:</strong> {{ averageRatingQuery ? averageRatingQuery + ' / 5' : 'N/A' }}</p>
+      <p><strong>Synopsis:</strong> {{ book.description?.value || book.description }}</p>
+      <p><strong>Genres:</strong> {{ book.subjects?.join(', ') }}</p>
+    </div>
+  </div>
+</div>
